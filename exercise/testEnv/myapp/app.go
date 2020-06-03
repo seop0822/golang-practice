@@ -1,4 +1,4 @@
-package main
+package myapp
 
 import (
 	"encoding/json"
@@ -33,23 +33,24 @@ func (f *fooHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(data))
 }
 
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Hello World")
+}
+
 func barHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.URL.Query().Get("name")
 	if name == "" {
 		name = "World"
 	}
+	fmt.Fprint(w, "Hello bar")
 	fmt.Fprintf(w, "Hello %s!", name)
+
 }
 
-func main() {
+func NewHttpHandler() http.Handler {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, "Hello World")
-	})
-
+	mux.HandleFunc("/", indexHandler)
 	mux.HandleFunc("/bar", barHandler)
-
 	mux.Handle("/foo", &fooHandler{})
-
-	http.ListenAndServe(":3000", mux)
+	return mux
 }
