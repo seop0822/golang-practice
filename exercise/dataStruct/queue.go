@@ -8,7 +8,7 @@ func NewQueue() *Queue {
 	return &Queue{ll:&LinkedList{}}
 }
 
-func (q *Queue) Push(val int) {
+func (q *Queue) Push(val int) {a
 	q.ll.AddNode(val)
 }
 

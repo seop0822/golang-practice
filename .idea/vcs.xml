@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/PuerkitoBio/goquery" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/andybalholm/cascadia" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/davecgh/go-spew" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/gorilla/mux" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/jtolds/gls" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/pmezard/go-difflib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/smartystreets/assertions" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/smartystreets/goconvey" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/stretchr/objx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/stretchr/testify" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/golang.org/x/net" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/golang.org/x/tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/golang.org/x/xerrors" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gopkg.in/yaml.v3" vcs="Git" />
+  </component>
+</project>

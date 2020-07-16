@@ -35,6 +35,7 @@ func barHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, "Hello World")
