@@ -12,8 +12,11 @@
     <mapping directory="$PROJECT_DIR$/github.com/smartystreets/goconvey" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/github.com/stretchr/objx" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/github.com/stretchr/testify" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/github.com/yuin/goldmark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/golang.org/x/mod" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/golang.org/x/net" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/golang.org/x/tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/golang.org/x/tour" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/golang.org/x/xerrors" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/gopkg.in/yaml.v3" vcs="Git" />
   </component>

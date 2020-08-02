@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <title>AWS s3 Welcome</title>
+  <meta charset="utf-8">
+  <script>
+    //소수 알고리즘
+    function isPrime(n) {
+      if (n <=1) return false;
+      if (n <= 3) return true;
+  
+      if ( n%2== 0 || n%3 == 0 ) return false;
+  
+      for (var i=5; i*i <n; i=i+6) {
+        console.log("여기다");
+        if (n%i ==0 || n%(i+2) ==0)
+          return false;
+      }
+  
+      return true;
+    }
+  
+    isPrime(5);
+  </script>
+</head>
+<body>
+  <h1><a href="index.html">AWS S3</a></h1>
+  <ol>
+    <li><a href="awsCloud.html">AWS Cloud Front</a></li>
+  
+  </ol>
+  <h2>S3</h2>
+  <p>Simple Storage Service 우리가 가진 파일을 보관해주는 서비스
+
+    AWS S3는 뛰어난 내구성, 최소 3개의 디바이스에 저장되기 때문에 한 곳이 문제가 생기거나 마비되도 동작 한다. 또 인터넷에 연결되있어서 세계 어디에서나 우리가 가진 파일에 접속해서 파일을 다운 받을 수 있다.  죽지 않는 파일서버를 만들 수 있다.
+  </p>
+
+</body>
+</html>
