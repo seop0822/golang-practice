@@ -7,28 +7,64 @@ type Node struct {
 	val int
 }
 
-func main () {
-	var root *Node
-	var tail * Node
+type LinkedList struct {
+	root *Node
+	tail *Node
+}
 
-	root = &Node{val:0}
-	tail = root //
-
-	for i:=1; i<2; i++ {
-		tail = AddNode(tail, i)
+func (l* LinkedList) RemoveNode(node *Node){
+	if node == l.root{
+		l.root = l.root.next
+		if l.root == nil{
+			l.tail =nil
+		}
+		node.next = nil
+		return
+	}
+	//이전노드 구하기
+	prev := l.root
+	for prev.next != node {
+		prev = prev.next
 	}
 
-	PrintNodes(root)
-	root , tail = RemoveNode(root, root, tail)
-	PrintNodes(root)
-	root , tail = RemoveNode(root, root, tail)
-	PrintNodes(root)
-	fmt.Printf("tail %d",tail.val)
+	if node == l.tail {
+		prev.next = nil
+		l.tail = prev
+	} else {	//root, tail이 아닐때
+		prev.next = prev.next.next
+	}
+	node.next = nil
+}
+
+func (l *LinkedList) AddNode(val int) {
+	if l.root == nil {
+		l.root = &Node{val:val}
+		l.tail = l.root
+		return
+	}
+	l.tail.next = &Node{val:val}
+	l.tail = l.tail.next
+}
+
+func main () {
+	list := &LinkedList{}
+	list.AddNode(0)
+
+	for i:=1; i<10; i++ {
+		list.AddNode(i)
+	}
+
+	list.PrintNodes()
+	list.RemoveNode(list.root.next)
+	list.PrintNodes()
+	list.RemoveNode(list.root)
+	list.PrintNodes()
+	fmt.Printf("tail: %d",list.tail.val)
 
 }
 
-func PrintNodes(root *Node) {
-	node := root
+func (l *LinkedList) PrintNodes() {
+	node := l.root
 	if node == nil{
 		fmt.Println("Nothing")
 	}else {
@@ -40,35 +76,5 @@ func PrintNodes(root *Node) {
 	}
 }
 
-func RemoveNode(node *Node, root *Node, tail *Node) (*Node, *Node){	//삭제할떄 root와 tail이 바뀌기 때문에 반환
-	if node == root{
-		root = root.next
-		//삭제하려는 노드가 root 하나일때 tail도 처리해줘야함 root.next가 널이라는 것은 노드가 하나라는 것
-		if root == nil {
-			tail = nil
-		}
-		return root, tail
-	}
-	//이전노드 구하기
-	prev := root
-	for prev.next != node {
-		prev = prev.next
-	}
 
-	if node == tail {
-		prev.next = nil
-		tail = prev
-	} else {	//root, tail이 아닐때
-		prev.next = prev.next.next
-	}
 
-	return root, tail
-}
-
-func AddNode(tail *Node, val int)  *Node{
-
-	node := &Node{val:val}
-	tail.next = node
-
-	return node
-}

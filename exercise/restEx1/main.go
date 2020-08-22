@@ -1,7 +1,7 @@
 package main
 
 import (
-	"exercise/restful/myapp"
+	"exercise/restEx1/myapp"
 	"net/http"
 )
 
